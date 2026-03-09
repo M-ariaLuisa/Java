@@ -38,3 +38,4 @@ console.log(listaDeNomes)
 console.log("\nRemovendo apenas o primeiro elemento")
 listaDeNomes.shift()
 console.log(listaDeNomes)
+
