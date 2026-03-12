@@ -50,3 +50,12 @@ console.log("\nNa lista de usuários, encontre um usuário ")
 const usuarioEncontrado = listaDeUsuarios.find(u => u.nome === "Ana")
 console.log(usuarioEncontrado)
 console.log(`Nome: ${usuarioEncontrado.nome} \nIdade ${usuarioEncontrado.idade}`)
+
+console.log("\nNa lista de usuários, encontre um usuário com idade de 45 anos" )
+const usuarioEncontrado1 = listaDeUsuarios.find(u => u.idade === 45)
+console.log(usuarioEncontrado1)
+console.log(`Nome: ${usuarioEncontrado1.nome} \nIdade ${usuarioEncontrado1.idade}`)
+
+console.log("\nNa lista de usuários, somando todas as idades :")
+const somaIdades = listaDeUsuarios.reduce((total,usuario) => total + usuario.idade,0)
+console.log(somaIdades)
