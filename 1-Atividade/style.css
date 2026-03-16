@@ -1,117 +1,82 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabuada das Meninas Superpoderosas</title>
-    <style>
-        /* CSS INTEGRADO - O TEMA DAS MENINAS */
-        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+/* TEMA: AS MENINAS SUPERPODEROSAS */
 
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            /* Fundo com as cores da Florzinha, Lindinha e Docinho */
-            background: linear-gradient(135deg, #ff94c2 0%, #a0e0ff 50%, #98ff98 100%);
-            font-family: 'Segoe UI', sans-serif;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .container {
-            background-color: white;
-            padding: 30px;
-            border-radius: 25px;
-            border: 5px solid #000; /* Estilo Cartoon */
-            box-shadow: 10px 10px 0px rgba(0,0,0,0.1);
-            text-align: center;
-            width: 300px;
-        }
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Degradê icônico: Florzinha (Rosa), Lindinha (Azul) e Docinho (Verde) */
+    background: linear-gradient(135deg, #ff94c2 0%, #a0e0ff 50%, #98ff98 100%);
+    font-family: 'Arial Rounded MT Bold', 'Helvetica', sans-serif;
+}
 
-        h1 {
-            font-family: 'Fredoka One', cursive;
-            color: #ff1493; /* Rosa Florzinha */
-            text-shadow: 2px 2px 0px #000;
-            margin-top: 0;
-        }
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 25px;
+    /* Bordas pretas grossas para parecer desenho animado */
+    border: 6px solid #000;
+    box-shadow: 12px 12px 0px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 350px;
+}
 
-        label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
+h1 {
+    color: #ff1493; /* Rosa Florzinha */
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    -webkit-text-stroke: 1px black;
+}
 
-        input {
-            width: 80%;
-            padding: 10px;
-            border: 3px solid #a0e0ff; /* Azul Lindinha */
-            border-radius: 10px;
-            margin-bottom: 20px;
-            font-size: 16px;
-            text-align: center;
-            outline: none;
-        }
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
 
-        button {
-            background-color: #32cd32; /* Verde Docinho */
-            color: white;
-            font-family: 'Fredoka One', cursive;
-            border: 3px solid #000;
-            padding: 10px 20px;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: 0.2s;
-        }
+input {
+    width: 80%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 3px solid #a0e0ff; /* Azul Lindinha */
+    border-radius: 12px;
+    font-size: 18px;
+    text-align: center;
+    outline: none;
+}
 
-        button:hover {
-            transform: scale(1.1);
-        }
+button {
+    background-color: #32cd32; /* Verde Docinho */
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 3px solid #000;
+    padding: 12px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
 
-        #resultadoTabuada {
-            margin-top: 20px;
-            background: #f9f9f9;
-            padding: 10px;
-            border-radius: 10px;
-            border: 2px dashed #ff94c2;
-            min-height: 40px;
-            line-height: 1.6;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
+button:hover {
+    transform: scale(1.1) rotate(-2deg);
+    background-color: #2eb82e;
+}
 
-    <div class="container">
-        <h1>Tabuada!</h1>
-
-        <label for="numeroInput">Digite um número:</label>
-        <input type="number" id="numeroInput" placeholder="Ex: 5">
-        
-        <button id="btnGerar">Gerar Tabuada</button>
-
-        <div id="resultadoTabuada">Aguardando número...</div>
-    </div>
-
-    <script>
-        // JAVASCRIPT INTEGRADO - PARA FUNCIONAR O BOTÃO
-        document.getElementById('btnGerar').addEventListener('click', function() {
-            const input = document.getElementById('numeroInput');
-            const resultado = document.getElementById('resultadoTabuada');
-            const numero = input.value;
-
-            if (numero === "") {
-                resultado.innerHTML = "Diga um número!";
-                return;
-            }
-
-            let conteudo = "";
-            for (let i = 1; i <= 10; i++) {
-                conteudo += `${numero} x ${i} = ${numero * i}<br>`;
-            }
-            resultado.innerHTML = conteudo;
-        });
-    </script>
-</body>
-</html>
+#resultadoTabuada {
+    margin-top: 20px;
+    padding: 15px;
+    background: #fdfdfd;
+    border-radius: 15px;
+    border: 2px dashed #ff94c2;
+    font-size: 18px;
+    color: #444;
+    line-height: 1.6;
+}
