@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffdeeb;
+    background-image: radial-gradient(#ffffff 2px, transparent 2px);
+    background-size: 30px 30px;
+    font-family: 'Varela Round', sans-serif;
+}
+img {
+    display: block;
+    margin: 20px auto;
+    cursor: pointer;
+    padding:5px 30px;
+    border-radius: 30px;
+}
+.container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 50px;
+    border: 8px solid #ffb1ce;
+    box-shadow: 0 10px 0px #f8a5c2;
+    text-align: center;
+    width: 350px;
+    position: relative;
+}
+
+.container::before {
+    content: "🎀";
+    font-size: 50px;
+    position: absolute;
+    top: -45px;
+    left: 20px;
+}
+
+h1 { color: #ff4d94; margin-bottom: 20px; }
+
+.input-group { margin-bottom: 15px; text-align: left; }
+
+label { display: block; margin-bottom: 5px; color: #ff4d94; font-weight: bold; }
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 3px solid #ffd1e3;
+    border-radius: 20px;
+    outline: none;
+    text-align: center;
+}
+
+button {
+    background-color: #ff4d94;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s;
+}
+
+button:hover { background-color: #ff1a75; transform: scale(1.05); }
+
+#resultado {
+    margin-top: 20px;
+    text-align: left;
+    color: #555;
+    background: #fffafa;
+    padding: 15px;
+    border-radius: 20px;
+    border: 2px dashed #ffb1ce;
+}
