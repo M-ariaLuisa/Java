@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f4f8;
+    background-image: radial-gradient(#ffffff 2px, transparent 2px);
+    background-size: 30px 30px;
+    font-family: 'Varela Round', sans-serif;
+}
+img {
+ display: block; 
+    margin: 0 auto 20px;  
+    max-width: 150px;   
+    height: auto;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 30px;
+    transition: 0.3s;
+    
+}
+
+img:hover {
+    transform: scale(1.1); 
+}
+
+.container {
+    content: "⭐"; 
+    background-color: white;
+    padding: 40px;
+    border-radius: 50px;
+    border: 8px solid #00579E;
+    box-shadow: 0 10px 0px #E11B22;
+    text-align: center;
+    width: 350px;
+    position: relative;
+}
+
+.container::before {
+    content: "⭐";
+    font-size: 50px;
+    position: absolute;
+    top: -45px;
+    left: 20px;
+}
+
+h1 { color: #00579E; margin-bottom: 20px; }
+
+.input-group { margin-bottom: 15px; text-align: left; }
+
+label { display: block; margin-bottom: 5px; color: #E11B22; font-weight: bold; }
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 3px solid #00579E;
+    border-radius: 20px;
+    outline: none;
+    text-align: center;
+}
+
+#resultado {
+    margin-top: 20px;
+    text-align: left;
+    color: #555;
+    background: #fffafa;
+    padding: 15px;
+    border-radius: 20px;
+    border: 2px dashed #00579E;
+}
+
+@keyframes balancarede {
+    0% { transform: scale(0.5) rotate(-10deg); opacity: 0; }
+    50% { transform: scale(1.5) rotate(10deg); opacity: 1; }
+    100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+button {
+    /* Cores do Bahia */
+    background-color: #00579E; 
+    color: white;
+    
+    /* Formato da Camisa */
+    width: 120px;           /* Largura fixa para parecer camisa */
+    height: 140px;          /* Mais alto que largo */
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    /* Gola e Mangas (Simuladas com Border Radius) */
+    border: none;
+    border-radius: 10px 10px 0 0; 
+    position: relative;
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
+    transition: 0.3s;
+    box-shadow: 0 6px 0 #003d6e;
+}
+
+/* O Número 10 */
+.numero-camisa {
+    font-size: 55px;        /* Bem grande no peito */
+    font-weight: bold;
+    line-height: 1;
+    text-shadow: 3px 3px 0px #E11B22; /* Contorno vermelho */
+    margin-bottom: 5px;
+}
+
+/* Texto "CALCULAR" ou "GOL" embaixo do número */
+.texto-botao {
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Efeito de Gola (Opcional - detalhe charmoso) */
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 40px;
+    height: 15px;
+    background: white; /* Cor da gola */
+    border-radius: 0 0 20px 20px;
+}
+
+/* Animação ao passar o mouse */
+button:hover {
+    transform: scale(1.1);
+    background-color: #0066ba;
+}
+
+button:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 #003d6e;
+}
