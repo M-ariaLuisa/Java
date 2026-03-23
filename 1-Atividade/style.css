@@ -1,5 +1,5 @@
-/* Importando uma fonte fofa e arredondada */
-@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+/* Importando fontes com estilo de desenho animado */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Varela+Round&display=swap');
 
 * {
     margin: 0;
@@ -12,88 +12,147 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Fundo Rosa Pastel Suave */
-    background-color: #ffdeeb;
-    background-image: radial-gradient(#ffffff 2px, transparent 2px);
-    background-size: 30px 30px; /* Efeito de poá/bolinhas brancas */
+    /* Fundo dinâmico com as 3 cores das meninas */
+    background: linear-gradient(45deg, #ffb3ba 25%, #b2e2f2 25%, #b2e2f2 50%, #b9fbc0 50%, #b9fbc0 75%, #ffb3ba 75%);
+    background-size: 100px 100px;
     font-family: 'Varela Round', sans-serif;
 }
 
 .container {
     background-color: white;
     padding: 40px;
-    border-radius: 50px; /* Bordas bem redondas */
-    border: 8px solid #ffb1ce;
-    box-shadow: 0 10px 0px #f8a5c2;
+    border-radius: 30px;
+    /* Traço preto grosso típico de cartoons */
+    border: 6px solid #000;
+    /* Sombra projetada "Pop Art" */
+    box-shadow: 12px 12px 0px #000;
     text-align: center;
-    width: 350px;
+    width: 360px;
     position: relative;
 }
 
-/* O "Laço" da Hello Kitty no topo (simulado com cores) */
+/* O Elemento X (Verde Químico) */
 .container::before {
-    content: "🎀";
+    content: "🧪";
     font-size: 50px;
     position: absolute;
-    top: -35px;
-    left: 20px;
+    top: -45px;
+    left: -20px;
+    filter: drop-shadow(0 0 8px #79ff79);
+    transform: rotate(-15deg);
+}
+
+/* O Coração da Abertura */
+.container::after {
+    content: "💗";
+    font-size: 50px;
+    position: absolute;
+    bottom: -35px;
+    right: -20px;
+    filter: drop-shadow(4px 4px 0px #000);
 }
 
 h1 {
-    color: #ff4d94;
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 0px #fff;
+    font-family: 'Fredoka One', cursive;
+    color: #000;
+    font-size: 28px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    /* Efeito de arco no título */
+    letter-spacing: 2px;
 }
 
 label {
     display: block;
-    margin-bottom: 10px;
-    color: #555;
-    font-weight: bold;
+    margin-bottom: 12px;
+    color: #000;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
 }
 
 input {
     width: 100%;
-    padding: 12px;
-    border: 3px solid #ffd1e3;
-    border-radius: 20px;
-    margin-bottom: 20px;
+    padding: 15px;
+    border: 4px solid #000;
+    border-radius: 15px;
+    margin-bottom: 25px;
     outline: none;
     text-align: center;
-    font-size: 16px;
-    color: #ff4d94;
+    font-size: 20px;
+    font-family: 'Fredoka One', cursive;
+    /* Começa com o azul da Lindinha */
+    color: #0088cc;
+    background-color: #f0f9ff;
+    transition: 0.3s;
 }
 
 input:focus {
-    border-color: #ff4d94;
+    /* Muda para o verde da Docinho no foco */
+    border-color: #2d6a4f;
+    background-color: #f2fff5;
 }
 
+.logo-heroina {
+    max-width: 130px;
+    height: auto;
+    display: block;
+    margin: 0 auto 15px; /* Centraliza e dá espaço */
+    
+    /* A MÁGICA ACONTECE AQUI: */
+    /* Faz o fundo branco da imagem sumir sobre fundos coloridos */
+    mix-blend-mode: multiply; 
+    
+    /* Mantém a animação de flutuar que já tínhamos */
+    animation: flutuarHeroi 3s ease-in-out infinite;
+}
+
+
+/* Botão Estilo "POW!" Multicolorido */
 button {
-    background-color: #ff4d94;
+    background-color: #ff1f44; /* Rosa Florzinha */
     color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 30px;
-    font-weight: bold;
+    border: 4px solid #000;
+    padding: 18px;
+    border-radius: 15px;
+    font-family: 'Fredoka One', cursive;
+    font-size: 22px;
     cursor: pointer;
     width: 100%;
-    font-size: 16px;
-    transition: transform 0.2s, background-color 0.2s;
+    position: relative;
+    transition: 0.2s;
+    box-shadow: 6px 6px 0px #000;
+    text-transform: uppercase;
 }
 
+/* No hover, ele alterna para a cor da Lindinha */
 button:hover {
-    background-color: #ff1a75;
-    transform: scale(1.05);
+    background-color: #4cc9f0; 
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0px #000;
 }
 
-#resultadoTabuada {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #fffafa;
-    border-radius: 20px;
-    color: #ff4d94;
+/* No clique, ele "afunda" e muda para o verde da Docinho */
+button:active {
+    background-color: #4ade80;
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px #000;
+}
+
+#resultado {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border: 4px solid #000;
+    border-radius: 15px;
+    color: #000;
     font-weight: bold;
-    line-height: 1.6;
-    border: 2px dashed #ffb1ce;
+    font-size: 18px;
+    /* Estilo de balão de fala de HQ */
+    box-shadow: 4px 4px 0px #eee;
+}
+
+#resultado b {
+    color: #ff1f44; /* Destaque para o valor final */
 }

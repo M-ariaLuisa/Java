@@ -5,7 +5,7 @@ function calcular() {
 
  
     if (inputQtd.value === "") {
-        divResultado.innerHTML = "<p style='color: #E11B22;'>⚽ Digite a quantidade de maçãs!</p>";
+        divResultado.innerHTML = "<p style='color: #E11B22;'>🍎 Digite a quantidade de maçãs!</p>";
         return;
     }
 
