@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap');
 
+/* 1. Reset e Configurações de Fundo */
 * {
     margin: 0;
     padding: 0;
@@ -11,136 +12,154 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* Fundo com as bolinhas azuis do Esquadrão */
     background-color: #f0f4f8;
-    background-image: radial-gradient(#ffffff 2px, transparent 2px);
+    background-image: radial-gradient(#00579E 2px, transparent 2px);
     background-size: 30px 30px;
-    font-family: 'Varela Round', sans-serif;
-}
-img {
- display: block; 
-    margin: 0 auto 20px;  
-    max-width: 150px;   
-    height: auto;
-    cursor: pointer;
-    padding: 5px;
-    border-radius: 30px;
-    transition: 0.3s;
-    
+    font-family: 'Kanit', sans-serif;
+    overflow: hidden;
 }
 
-img:hover {
-    transform: scale(1.1); 
-}
-
+/* 2. Container do Bahia (O Card) */
 .container {
-    content: "⭐"; 
     background-color: white;
-    padding: 40px;
-    border-radius: 50px;
-    border: 8px solid #00579E;
-    box-shadow: 0 10px 0px #E11B22;
+    padding: 40px 30px 30px 30px;
+    border-radius: 35px;
+    border: 6px solid #00579E;
+    /* Sombra Dupla: Azul e Vermelha */
+    box-shadow: 8px 8px 0px #00579E, 16px 16px 0px #E11B22;
     text-align: center;
     width: 350px;
     position: relative;
+    overflow: hidden;
 }
 
+/* Detalhe: Faixa Tricolor no topo interno */
 .container::before {
-    content: "⭐";
-    font-size: 50px;
+    content: "";
     position: absolute;
-    top: -45px;
-    left: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(to right, #00579E 33.3%, #ffffff 33.3%, #ffffff 66.6%, #E11B22 66.6%);
 }
 
-h1 { color: #00579E; margin-bottom: 20px; }
+/* 3. Títulos e Imagem */
+h1 { 
+    color: #00579E; 
+    margin: 15px 0 20px; 
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0px #eee;
+}
 
-.input-group { margin-bottom: 15px; text-align: left; }
+img {
+    max-width: 90px;
+    margin-bottom: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.3s ease;
+}
 
-label { display: block; margin-bottom: 5px; color: #E11B22; font-weight: bold; }
+img:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* 4. Entradas de Notas (Inputs) */
+.input-group { 
+    margin-bottom: 15px; 
+    text-align: left; 
+}
+
+label { 
+    display: block; 
+    margin-bottom: 5px; 
+    color: #00579E; 
+    font-weight: bold; 
+    font-size: 0.9rem;
+}
 
 input {
     width: 100%;
     padding: 12px;
-    border: 3px solid #00579E;
-    border-radius: 20px;
+    border: 3px solid #f0f0f0;
+    border-radius: 15px;
     outline: none;
     text-align: center;
+    font-size: 1.1rem;
+    font-family: 'Kanit', sans-serif;
+    transition: 0.3s;
 }
 
-#resultado {
-    margin-top: 20px;
-    text-align: left;
-    color: #555;
-    background: #fffafa;
-    padding: 15px;
-    border-radius: 20px;
-    border: 2px dashed #00579E;
+input:focus {
+    border-color: #00579E;
+    background-color: #f9fbff;
 }
 
-@keyframes balancarede {
-    0% { transform: scale(0.5) rotate(-10deg); opacity: 0; }
-    50% { transform: scale(1.5) rotate(10deg); opacity: 1; }
-    100% { transform: scale(1) rotate(0deg); opacity: 1; }
-}
-
+/* 5. BOTÃO BOLA DE FUTEBOL COM ANIMAÇÃO DE GIRO */
 button {
-    /* Cores do Bahia */
-    background-color: #00579E; 
-    color: white;
-    
-    /* Formato da Camisa */
-    width: 120px;           /* Largura fixa para parecer camisa */
-    height: 140px;          /* Mais alto que largo */
+    background-color: #ffffff;
+    width: 100px;
+    height: 100px;
     margin: 20px auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
-    /* Gola e Mangas (Simuladas com Border Radius) */
-    border: none;
-    border-radius: 10px 10px 0 0; 
-    position: relative;
+    border: 4px solid #00579E;
+    border-radius: 50%;
     cursor: pointer;
-    font-family: 'Oswald', sans-serif;
-    transition: 0.3s;
-    box-shadow: 0 6px 0 #003d6e;
+    position: relative;
+    
+    /* Tempo e suavidade da animação */
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+    /* Padrão visual da bola */
+    background-image: 
+        radial-gradient(circle at center, #f5f5f5 20%, transparent 21%),
+        linear-gradient(45deg, transparent 48%, #00579E 50%, transparent 52%),
+        linear-gradient(-45deg, transparent 48%, #00579E 50%, transparent 52%);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* O Número 10 */
-.numero-camisa {
-    font-size: 55px;        /* Bem grande no peito */
-    font-weight: bold;
-    line-height: 1;
-    text-shadow: 3px 3px 0px #E11B22; /* Contorno vermelho */
-    margin-bottom: 5px;
-}
-
-/* Texto "CALCULAR" ou "GOL" embaixo do número */
+/* Texto dentro da bola */
 .texto-botao {
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
+    font-weight: 900;
+    color: #00579E;
+    font-size: 0.8rem;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2px 6px;
+    border-radius: 5px;
+    border: 1px solid #00579E;
+    pointer-events: none; /* Garante que o clique passe para o botão */
 }
 
-/* Efeito de Gola (Opcional - detalhe charmoso) */
-button::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 40px;
-    height: 15px;
-    background: white; /* Cor da gola */
-    border-radius: 0 0 20px 20px;
-}
-
-/* Animação ao passar o mouse */
+/* A Mágica do Giro: 360 graus no Hover */
 button:hover {
-    transform: scale(1.1);
-    background-color: #0066ba;
+    transform: scale(1.1) rotate(360deg);
+    border-color: #E11B22;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
+/* Efeito de clique (chute) */
 button:active {
-    transform: translateY(4px);
-    box-shadow: 0 2px 0 #003d6e;
+    transform: scale(0.9);
+    transition: 0.1s;
 }
+
+/* 6. Área de Resultado */
+#resultado {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 20px;
+    background: #fafafa;
+    border: 3px dashed #00579E;
+    min-height: 60px;
+    color: #333;
+}
+
+/* Classes para o JavaScript aplicar cores no resultado */
+.status-aprovado { color: #28a745; font-weight: bold; font-size: 1.1rem; }
+.status-reprovado { color: #E11B22; font-weight: bold; font-size: 1.1rem; }
