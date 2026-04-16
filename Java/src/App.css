@@ -1,0 +1,111 @@
+/* Corpo da página */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container principal */
+.app-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Banner do Bahia */
+.banner {
+  background: linear-gradient(to right, #003366, #c8102e);
+  color: white;
+  text-align: center;
+  padding: 30px 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.banner h1 {
+  margin: 0;
+  font-size: 28px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Containers */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-container,
+.lista-container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Títulos */
+h2 {
+  color: #003366;
+  margin-bottom: 15px;
+}
+
+/* Lista de jogadores */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  position: relative;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+/* Animação de hover */
+li:hover {
+  background-color: #c8102e;
+  color: white;
+  transform: translateX(10px);
+  cursor: pointer;
+}
+
+/* Figurinha (emoji bola de futebol) no hover */
+li:hover::before {
+  content: "⚽ ";
+}
+
+/* Inputs */
+input {
+  padding: 10px;
+  margin: 5px 0;
+  width: calc(100% - 22px);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  border-color: #003366;
+  outline: none;
+}
+
+/* Botões */
+button {
+  padding: 10px 15px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #c8102e;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #003366;
+  transform: scale(1.05);
+}
